@@ -3,7 +3,7 @@ import "./App.css";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import employees from "./utils/API";
+import employees from "./mockEmpData.json";
 // import Search from "./components/SearchBar";
 import EmployeeCard from "./components/EmployeeCard/EmployeeCard";
 
