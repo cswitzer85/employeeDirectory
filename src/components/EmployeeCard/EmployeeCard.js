@@ -17,7 +17,7 @@ function EmployeeCard(props) {
             <strong>E-Mail:</strong> {props.email}
           </li>
           <li>
-            <strong>ID:</strong> {props.id}
+          <strong>Employee Number:</strong> {props.empNum}
           </li>
         </ul>
       </div>

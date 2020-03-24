@@ -14,40 +14,41 @@ class App extends Component {
       employees: employees
     };
   }
-  
-// state = {
-//   employees:[]
-// }
 
-// componentWillMount(){
-//   API.getUsers().then(res => {
-//     console.log(res);
-//     this.setState({
-//       employees: res
-//     });
-//   })
-// }
+  // state = {
+  //   employees:[]
+  // }
 
-// }
+  // componentWillMount(){
+  //   API.getUsers().then(res => {
+  //     console.log(res);
+  //     this.setState({
+  //       employees: res
+  //     });
+  //   })
+  // }
+
+  // }
   render() {
     console.log(this.state.employees);
     return (
       // <Router>
-        // <div>
-        //   <Search />
-          <Wrapper>
-            <Title>Employee List</Title>
-            {this.state.employees.map(employee => (
-              <EmployeeCard
-              firstName={employee.name.first}
-              lastName={employee.name.last}
-              id={employee.login.uuid}
-              image={employee.picture.thumbnail}
-              email={employee.email}
-              />
-            ))}
-          </Wrapper>
-        // </div>
+      // <div>
+      //   <Search />
+      <Wrapper>
+        <Title>Employee List</Title>
+        {this.state.employees.map(employee => (
+          <EmployeeCard
+            firstName={employee.name.first}
+            lastName={employee.name.last}
+            empNum={employee.login.uuid}
+            image={employee.picture.thumbnail}
+            email={employee.email}
+            key={employee.login.uuid}
+          />
+        ))}
+      </Wrapper>
+      // </div>
       // </Router>
     );
   }
