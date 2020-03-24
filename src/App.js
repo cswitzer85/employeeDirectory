@@ -10,7 +10,7 @@ import Title from "./components/Title";
 import API from "./utils/API";
 
 // import Search from "./components/SearchBar";
-import EmployeeCard from "./components/EmployeeCard/EmployeeCard";
+import EmployeeCard from "./components/EmployeeCard";
 
 class App extends Component {
   state = {
@@ -49,7 +49,7 @@ class App extends Component {
             firstName={employee.name.first}
             lastName={employee.name.last}
             empNum={employee.login.uuid}
-            image={employee.picture.thumbnail}
+            image={employee.picture.medium}
             email={employee.email}
             key={employee.login.uuid}
           />
