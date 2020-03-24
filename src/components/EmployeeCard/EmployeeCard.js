@@ -2,7 +2,7 @@ import React from "react";
 // import "./style.css";
 
 function EmployeeCard(props) {
-    console.log('EmployeeCard props: ', props);
+  console.log("EmployeeCard props: ", props);
   return (
     <div className="card">
       <div className="img-container">
@@ -11,13 +11,13 @@ function EmployeeCard(props) {
       <div className="content">
         <ul>
           <li>
-  <strong>Name:</strong> {props.firstName} {props.lastName}
+            <strong>Name:</strong> {props.firstName} {props.lastName}
           </li>
           <li>
             <strong>E-Mail:</strong> {props.email}
           </li>
           <li>
-          <strong>Employee Number:</strong> {props.empNum}
+            <strong>Employee Number:</strong> {props.empNum}
           </li>
         </ul>
       </div>

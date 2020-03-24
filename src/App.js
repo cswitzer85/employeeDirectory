@@ -3,34 +3,41 @@ import "./App.css";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import employees from "./mockEmpData.json";
+
+// Use mock data for employees
+// import employees from "./mockEmpData.json";
+// Use API call for employees
+import API from "./utils/API";
+
 // import Search from "./components/SearchBar";
 import EmployeeCard from "./components/EmployeeCard/EmployeeCard";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      employees: employees
-    };
+  state = {
+    employees: []
+  };
+
+  componentWillMount() {
+    API.getUsers().then(res => {
+      console.log("component will mount: ", res.data.results);
+      this.setState({
+        employees: res.data.results
+      });
+    });
   }
 
-  // state = {
-  //   employees:[]
-  // }
-
-  // componentWillMount(){
-  //   API.getUsers().then(res => {
+  // To be used for searching for a particular employee ----_____----____-----____
+  //   getUsers = query => {
+  // API.getUsers().then(res => {
   //     console.log(res);
-  //     this.setState({
   //       employees: res
   //     });
   //   })
   // }
-
   // }
+
   render() {
-    console.log(this.state.employees);
+    console.log("this state employees: ", this.state.employees);
     return (
       // <Router>
       // <div>
@@ -53,5 +60,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
